@@ -1,0 +1,13 @@
+{
+  "name": "appservice-certrificate-expiration-checker",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/arm-resourcegraph": "^4.2.1",
+    "@azure/identity": "^3.1.3"
+  }
+}
