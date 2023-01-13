@@ -4,7 +4,7 @@ const { ResourceGraphClient } = require("@azure/arm-resourcegraph");
 const credentials = new DefaultAzureCredential();
 const client = new ResourceGraphClient(credentials);
 
-const expireThreshold = process.env["expireThreshold"] || "30"; // days
+const expireThreshold = process.env["expireThreshold"] || "90"; // days
 const query = `Resources
 | where subscriptionId == "${process.env["subscriptionId"]}"
 | where type == "microsoft.certificateregistration/certificateorders"

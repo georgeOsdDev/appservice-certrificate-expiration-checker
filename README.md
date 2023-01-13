@@ -14,7 +14,7 @@ If a certificate that is about to expire is found, alert notification will send 
 3. Edit AppSettings of Function App
 
    - `subscriptionId` : target subscription to check
-   - `expireThreshold` : expire threshold days, default 30
+   - `expireThreshold` : expire threshold days, default 90
 
 4. Setup Azure Monitor log alert
 
