@@ -8,7 +8,7 @@ const expireThreshold = process.env["expireThreshold"] || "90"; // days
 const query = `Resources
 | where subscriptionId == "${process.env["subscriptionId"]}"
 | where type == "microsoft.certificateregistration/certificateorders"
-| where properties["expirationTime"] < datetime_add("day", ${expireThreshold}, now())
+| where properties["expirationTime"] >= now() and properties["expirationTime"] < datetime_add("day", ${expireThreshold}, now())
 | project id, resourceGroup, name, expirationTime=tostring(properties["expirationTime"]), distinguishedName=properties["distinguishedName"], provisioningState=properties["provisioningState"], autoRenew=properties["autoRenew"]
 | order by expirationTime asc`;
 
